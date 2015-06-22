@@ -1,0 +1,100 @@
+.graph {
+  background: white none repeat scroll 0 0;
+  color: #4c4c4c;
+  height: 512px; 
+}
+
+.graph-void {
+  background: white none repeat scroll 0 0;
+  color: #4c4c4c;
+}
+
+.graph-void span {
+  display: block;
+  text-align: center;
+}
+
+.graph line.graph-link {
+  fill: none;
+  stroke: gray;
+  stroke-width: 2px;
+}
+
+.graph .graph-node {
+  cursor: pointer;
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+.graph .graph-node circle {
+  stroke-width: 4px;
+}
+
+.graph .graph-legend {
+  cursor: pointer;
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+.graph .graph-legend circle {
+  stroke-width: 4px;
+}
+
+.graph-tip {
+  padding: 0; 
+  background: rgba(0, 0, 0, 0.82);
+  color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  width: 400px; 
+  z-index:1000;
+}
+
+.graph-tip .tip-content {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 100%;
+}
+
+.graph-tip .tip-content .tip-header {
+ height: 30px;
+ padding: 12px;
+ font-size: 16px;
+ font-weight: bold;
+}
+
+.graph-tip .tip-content .tip-header .tip-type {
+ color: #aaa;
+ text-align: right;
+ margin: 0;
+ float: left;
+}
+
+.graph-tip .tip-content .tip-header .tip-id {
+ color: #aaa;
+ /*text-align: right;*/
+ float: right;
+}
+
+.graph-tip .tip-content .tip-line {
+ border-top: 1px solid #555;
+ padding: 12px;
+}
+
+.graph-tip .tip-content .tip-line .tip-key {
+ width: 25%;
+ color: #aaa;
+ text-align: right;
+ margin: 0;
+ float: left;
+ 
+}
+
+.graph-tip .tip-content .tip-line .tip-value {
+ margin-left: 28%;
+ word-break: break-all;  
+
+}

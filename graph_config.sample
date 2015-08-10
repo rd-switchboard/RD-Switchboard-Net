@@ -1,0 +1,10 @@
+<?php
+
+$bucket = '{BUCKET NAME}';
+
+$my_host = '{MySQL HOST NAME}';
+$my_user = '{MySQL USER NAME}';
+$my_password = '{MySQL PASSWORD}';
+$my_database = '{MySQL DATABASE}';
+
+?>

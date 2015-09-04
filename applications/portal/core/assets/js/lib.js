@@ -4749,11 +4749,20 @@ d3.graph = function() {
 	//html += "<li class='tip-header'><div class='tip-type'>" + d.properties.node_type + ", " + d.properties.node_source + " </div><div class='tip-id'>[" + d.id + "]</div></li>";
           
         for(var p in d.properties) {
-	    if (p === 'key')
+	    if (p === 'original_key' || p === 'local_id')
 		continue;
 	    var name;
 	    var property = d.properties[p];
-	    if (p === "rda_url")
+	    if( Object.prototype.toString.call( property ) === '[object Array]' ) {
+		property = property.join();
+	    } 
+	    if (typeof property === 'string' || property instanceof String) {
+	    if (property.length > 256) {
+		property = property.substring(0, 256) + "...";
+	    } 
+	    if (p === "key")
+		name = "URL";
+	    else if (p === "rda_url")
 		name = "URL";
 	    else if (p === "node_source") {
 		name = "Source";
@@ -4761,6 +4770,14 @@ d3.graph = function() {
 	    } else if (p === "node_type") {
 		name = "Type";
 		property = property.toUpperCase();
+	    } else if (p === "ands_group") {
+		name = "ANDS Group";
+	    } else if (p === "doi") {
+		name = "DOI";
+	    } else if (p === "scopus_eid") {
+		name = "Scopus EID";
+	    } else if (p === "published_date") {
+		name = "Published";
 	    } else {
 		name = p.split("_").map(function (e) {
 		    return e.charAt(0).toUpperCase() + e.substr(1);
@@ -4768,6 +4785,7 @@ d3.graph = function() {
 	    }
 
 	    html += "<li class='tip-line'><div class='tip-key'>" + name + "</div><div class='tip-value'>" + property + "</div></li>";
+	    }
         }
 	 
         return html + "</ul>"; 
@@ -4799,7 +4817,7 @@ d3.graph = function() {
     }
     
     function openUrl(d) {
-	window.open("http://" + d.properties.key.replace("researchdata.ands.org.au", "rd-switchboard.net"), '_blank', 'location=yes,scrollbars=yes,status=yes')
+	window.open("http://" + d.properties.key, '_blank', 'menubar=yes,titlebar=yes,toolbar=yes,location=yes,scrollbars=yes,status=yes')
     }
 
 /*    function slided(d) {
@@ -4813,15 +4831,17 @@ d3.graph = function() {
 
 
 $(document).ready(function() {
-    var parser = document.createElement('a');
+//    var parser = document.createElement('a');
    
-    parser.href = window.location.href;
+//    parser.href = window.location.href;
    
-    var path = parser.pathname.split("/");
-    if (path.length >= 3) {
+//    var path = parser.pathname.split("/");
+//    if (path.length >= 3) {
     //    var jsonName = "/rda/" + path[1] + "-" + path[2] + ".json";	
 //	var jsonName = "http://graph.rd-alliance.org.s3.amazonaws.com/rda/" + path[1] + "-" + path[2] + ".json";
-	var jsonName = "http://rd-switchboard.s3.amazonaws.com/rda/" + path[1] + "-" + path[2] + ".json";
+//	var jsonName = "http://rd-switchboard.s3.amazonaws.com/rda/" + path[1] + "-" + path[2] + ".json";
+//	var jsonName = "http://rd-switchboard.net/graph/graph.php?graph=" + path[1] + "-" + path[2] + "&accesskey=rdswitchboard";
+	var jsonName = "http://rd-switchboard.net/api/graph/index.php?reqkey=" + encodeURIComponent($('#ro_key').val()) + "&accesskey=rdswitchboard";
 	d3.json(jsonName, function(error, json) {
             if (null == error) {
         	//alert("json: " + json);
@@ -4839,6 +4859,6 @@ $(document).ready(function() {
 		        .text("Switchboard Widget: This collection has no related party record, grant or connected dataset.");
             }
         });
-    }
+//    }
 });
 

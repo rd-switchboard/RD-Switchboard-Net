@@ -1,10 +1,8 @@
 <?php
 
-$bucket = '{BUCKET NAME}';
+$bucket = 'rd-switchboard';
 
-$my_host = '{MySQL HOST NAME}';
-$my_user = '{MySQL USER NAME}';
-$my_password = '{MySQL PASSWORD}';
-$my_database = '{MySQL DATABASE}';
-
-?>
+$my_host = 'localhost';
+$my_user = 'graph';
+$my_password = 'Buhei7phaiCuoWai';
+$my_database = 'dbs_graph';

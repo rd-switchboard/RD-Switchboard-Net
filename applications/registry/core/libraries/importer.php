@@ -977,6 +977,7 @@ class Importer {
         if (!$crosswalk_metadata_format) { return; }
 
         $predefinedProviderTypes = $this->CI->config->item('provider_types');
+//	die("ppt: ". $predefinedProviderTypes);
 
         foreach($predefinedProviderTypes as $ppt)
         {

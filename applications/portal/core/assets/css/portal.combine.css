@@ -16008,6 +16008,37 @@ ul.listy li a small {
   font-weight: normal;
   text-decoration: none;
 }
+.navbar-brand {
+  padding: 33px 15px 0 37px;
+  position: relative;
+  font-size: 16px;
+}
+.navbar-brand img {
+  position: absolute;
+  top: 24px;
+  left: 0;
+}
+.navbar-brand span {
+  display: block;
+  font-size: 25px;
+}
+@media (min-width: 768px) {
+  .navbar-brand {
+    padding: 33px 15px 0 52px;
+  }
+  .navbar-brand img {
+    left: 15px;
+  }
+}
+@media (min-width: 600px) {
+  .navbar-brand {
+    font-size: 25px;
+  }
+  .navbar-brand span {
+    display: inline;
+    font-size: 25px;
+  }
+}
 .panel {
   word-wrap: break-word;
 }

@@ -1,15 +1,16 @@
 <?php
 
 require 'vendor/autoload.php';
-require '../graph_config.php';
+require '../../graph_config.php';
 
 use Aws\S3\S3Client;
 
-$id = $_GET['id'];
-$graph = $_GET['graph'];
+$id = $_GET['accesskey'];
+$graph = urlencode($_GET['reqkey']);
 $ip = $_SERVER['REMOTE_ADDR'];
 $fwd = $_SERVER['HTTP_X_FORWARDED_FOR'];
 $error = 0;
+$folder = 'rds2';
 
 if (strspn($graph, "/\\'\"") > 0) $error = 1;
 
@@ -40,7 +41,8 @@ if ($error == 0) {
 
 	$client->registerStreamWrapper();
 
-	readfile("s3://{$bucket}/rda/{$graph}.json") or $error = 1;
+	if (isset($graph))
+	readfile("s3://{$bucket}/{$folder}/{$graph}.json") or $error = 1;
 	break;
 	
     case 2:

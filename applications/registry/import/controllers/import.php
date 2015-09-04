@@ -6,6 +6,31 @@
  */
 class Import extends MX_Controller {
 
+	function import_s3(){
+	    set_exception_handler('json_exception_handler');
+	    
+	    header('Cache-Control: no-cache, must-revalidate');
+	    header('Content-type: application/json');
+	    
+	    $id = $this->input->post('id');
+	    if(!$id) throw new Exception('Data Source ID must be provided');
+	    
+	    $this->load->model('data_source/data_sources', 'ds');
+	    $ds = $this->ds->getByID($id);
+	
+	    if(!$ds) throw new Exception('Data Source Not Found');
+	
+	    $xml = $this->input->post('xml');
+	    if (!$xml) throw new Exception('XML must be provided');
+	    
+	    $data['xml'] = $xml;
+	    
+	    $this->simple_import('xml', $id, $data);
+	    
+	    die('done');
+	}
+
+
 	/**
 	 * Returns the harvest for a given data source
 	 * @param  data_source_id $id
@@ -448,6 +473,7 @@ class Import extends MX_Controller {
 				$this->importer->setCrosswalk($ds->provider_type);
 				$this->importer->setDatasource($ds);
 				$this->importer->commit();
+				
 			} catch (Exception $e) {
 				if($type=='xml') $ds->append_log('Import from Pasted XML failed '.$e->getMessage(), 'error');
 				if($type=='url') $ds->append_log('Import from URL failed '.NL.'URL: '.$url.NL.$e->getMessage(), 'error');

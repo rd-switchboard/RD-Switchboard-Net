@@ -8,12 +8,12 @@
             </button>
             <div>
                 <a href="{{portal_url()}}" class="navbar-brand">
-                    <span>RD-Switchboard</span> Browser
+					<img width="32" border="0" height="32" alt="" src="/assets/core/images/header_logo.png" />
+                    <span>RD-Switchboard</span> Browser (BETA)
                 </a>
             </div>
-            
             @if(current_url()!=base_url())
-            <div class="clear"><small>Research Data Switchboard</small></div>
+        	<div class="clear"><small>Research Data Switchboard</small></div>
             @endif
         </div>
         <nav class="collapse navbar-collapse main-navbar" role="navigation">
@@ -22,6 +22,9 @@
                 <?php 
                     $profile_image = profile_image();
                 ?>
+                @if(isset($ro) && $ro->core['id'])
+                    <li class="cat-item"> <a href="{{base_url('registry/registry_object/view/')}}/<?=$this->ro->id?>" title="">Registry View</a> </li>
+                @endif
                 @if($profile_image)
                    <li><a href="{{portal_url('profile')}}"><img src="{{ $profile_image }}" alt="" class="profile_image_small"></a></li>
                 @endif

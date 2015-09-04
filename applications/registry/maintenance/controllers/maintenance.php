@@ -548,7 +548,7 @@ class Maintenance extends MX_Controller {
 		$this->load->model('registry_object/registry_objects', 'ro');
 
 		$ds = $this->ds->getByID($data_source_id);
-		$keys = $this->ro->getKeysByDataSourceID($data_source_id, false, 'PUBLISHED');
+		$keys = $this->ro->getKeysByDataSourceID($data_source_id, false, 'PUBLISHED', 0, 5000000);
 
 		$chunkSize = 50;
 		if($task=='index') $chunkSize = 200;

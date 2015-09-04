@@ -14,6 +14,39 @@
 	}
 }
 
+.navbar-brand {
+    padding: 33px 15px 0 37px;
+    position: relative;
+    font-size: 16px;
+	img {
+		position: absolute;
+		top: 24px;
+		left: 0;
+	}
+	span {
+		display: block;
+		font-size: 25px;
+	}
+}
+@media (min-width: 768px) {
+    .navbar-brand {
+        padding: 33px 15px 0 52px;
+		img {
+			left: 15px;
+		}
+	}
+}
+@media (min-width: 600px) {
+    .navbar-brand {
+        font-size: 25px;
+		span {
+			display: inline;
+			font-size: 25px;
+		}
+    }
+}
+
+
 .panel { word-wrap:break-word; }
 .post { margin-bottom:auto; }
 

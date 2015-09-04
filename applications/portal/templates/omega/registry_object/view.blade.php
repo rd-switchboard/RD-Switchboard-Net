@@ -9,7 +9,7 @@
 		@foreach ($contents as $content)
 			@include('registry_object/contents/'.$content)
 		@endforeach
-		<div class="graph" style="visibility: visible;"/>
+		<!-- <div class="graph" style="visibility: visible;"/> -->
 	</div>
 </article>
 @stop

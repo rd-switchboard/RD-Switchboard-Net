@@ -3,6 +3,6 @@
 $bucket = 'rd-switchboard';
 
 $my_host = 'localhost';
-$my_user = 'graph';
-$my_password = 'Buhei7phaiCuoWai';
+$my_user = {CONFIGURE ME}
+$my_password = {COMFIGURE ME}
 $my_database = 'dbs_graph';

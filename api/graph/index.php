@@ -31,6 +31,8 @@ if ($id == 0)
     $error = 2;
    
 if ($error == 0) {
+    header('Access-Control-Allow-Origin: *');
+
     switch ($level) {
     case 1:
 	// Create a client object

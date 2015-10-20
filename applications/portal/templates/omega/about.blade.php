@@ -108,7 +108,56 @@ $banner = isset($banner) ? $banner : asset_url('images/collection_banner.jpg', '
             <div class="col-md-2"> </div>
         </div>
 
+            <div class="col-md-12 swatch-gray" style="padding-bottom:-20px">
+                <div class="col-md-2 not-condensed os-animation animated fadeInUp swatch-gray"> </div>
+                <div class="col-md-8 not-condensed os-animation animated fadeInUp swatch-gray" style="-webkit-animation: 0s;padding-top:30px;padding-bottom:50px">
+                    <div class="text-center" style="-webkit-animation: 0s;">
+                        <h1 class="bigger hairline bordered bordered-normal os-animation animated fadeIn" data-os-animation="fadeIn" data-os-animation-delay="0s" style="-webkit-animation: 0s;color:#000000">Learn more</h>
+                    </div>
+                    <div class="row " data-os-animation="" data-os-animation-delay="">
+                        <div class="col-md-4 ">
+                            <a href="http://ands.org.au/researchers/" target="_blank">
+                                <div class="element-medium-top element-medium-bottom text-center os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".0s" style="-webkit-animation: 0s;">
+                                    <div class="box box-round box-medium box-simple">
+                                        <div class="box-dummy"></div>
+                                        <div class="box-inner grid-overlay-0" style="background-color:#353b42;">
+                                            <i class="fa fa-share-alt" style="color:#ffffff"></i>
+                                        </div>
+                                    </div>
+                                    <p class="">Becoming a contributor</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 ">
+                            <a href="" data-toggle="modal" data-target="#help_modal" class="search_help">
+                                <div class="element-medium-top element-medium-bottom text-center os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".3s" style="-webkit-animation: 0.3s;">
+                                    <div class="box box-round box-medium box-simple">
+                                        <div class="box-dummy"></div>
+                                        <div class="box-inner grid-overlay-0" style="background-color:#353b42;">
+                                            <i class="fa fa-search" style="color:#ffffff"></i>
+                                        </div>
+                                    </div>
+                                    <p class="">Searching for data</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 ">
+                            <a href="http://www.ands.org.au/discovery/reuse.html" target="_blank">
+                                <div class="element-medium-top element-medium-bottom text-center os-animation animated fadeInUp" data-os-animation="fadeInUp" data-os-animation-delay=".6s" style="-webkit-animation: 0.6s;">
+                                    <div class="box box-round box-medium box-simple">
+                                        <div class="box-dummy"></div>
+                                        <div class="box-inner grid-overlay-0" style="background-color:#353b42">
+                                            <i class="fa fa-external-link" style="color:#ffffff"></i>
+                                        </div>
+                                    </div>
+                                    <p class="">Accessing and reusing research data</p>
+                                </div>
+                            </a>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
     </section>
 </article>
 @stop

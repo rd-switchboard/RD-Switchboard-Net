@@ -45,7 +45,7 @@ Research Data Switchboard (RD-Switchboard) is an open and collaborative software
 RD-Switchboard project addresses the problem of cross platform discovery by connecting datasets together across multiple registries on the basis of co-authorship or other collaboration models such as joint funding and grants. The best metaphor for these services is the SEE ALSO section in online bookstores, where customers are invited to look at other products by the same author, related topics or similar publishers. 
 </p>
 <p>
-This website (www.rd-switchboard.net) is a demonstrator of this capability data collections in Research Data Australia, Dryad and CERRN. In addition, it shows how <a href="https://github.com/rd-switchboard/Widgets">RD-Switchboard Widget and API</a> can be integrated into research data discovery platforms.
+This website (www.rd-switchboard.net) is a demonstrator of this capability using data collections in Research Data Australia, Dryad and CERN InspireHEP. In addition, it shows how <a href="https://github.com/rd-switchboard/Widgets">RD-Switchboard Widget and API</a> can be integrated into research data discovery platforms.
 </p>
                             </p>
                         </div>

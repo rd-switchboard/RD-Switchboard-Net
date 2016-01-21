@@ -1,8 +1,8 @@
 <?php
 
-$bucket = 'rd-switchboard';
+$bucket = ;
 
 $my_host = 'localhost';
-$my_user = {CONFIGURE ME}
-$my_password = {COMFIGURE ME}
-$my_database = 'dbs_graph';
+$my_user = ;
+$my_password = ;
+$my_database = ;

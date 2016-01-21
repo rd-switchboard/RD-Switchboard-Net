@@ -50,7 +50,7 @@ svoc:anzsrc-for a api:API
 
 	; api:defaultViewer api:describeViewer 
 	; rdfs:label "ANZSRC Field of Research Vocabulary Service"@en 
-	; api:sparqlEndpoint <http://<SERVER_IP>:8080/openrdf-sesame/repositories/anzsrc-for> 
+	; api:sparqlEndpoint <http://52.25.66.82:8080/openrdf-sesame/repositories/anzsrc-for> 
 
 	; api:endpoint
 		svoc:URIEndpoint ,
@@ -75,7 +75,7 @@ svoc:anzsrc-for a api:API
 	.
 
 ## remove this if the endpoint does not support SPARQL 1.1
-<http://<SERVER_IP>:8080/openrdf-sesame/repositories/anzsrc-for> elda:supportsNestedSelect true .
+<http://52.25.66.82:8080/openrdf-sesame/repositories/anzsrc-for> elda:supportsNestedSelect true .
 
 
 # Viewers (this section describes what properties should be displayed in a particular "view")

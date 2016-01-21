@@ -1,3 +1,0 @@
-<div> 
-   Graph Widget
-</div>

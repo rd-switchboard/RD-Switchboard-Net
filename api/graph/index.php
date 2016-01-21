@@ -33,6 +33,7 @@ if ($id == 0)
 if ($error == 0) {
     header('Access-Control-Allow-Origin: *');
 
+
     switch ($level) {
     case 1:
 	// Create a client object
@@ -54,6 +55,9 @@ if ($error == 0) {
 	} else
 	    $error = 2;
 	break;
+	
+    case 3: 
+	$error = 3;
 
     default:
 	$error = 2;
@@ -69,6 +73,8 @@ switch ($error) {
 	die('Invalid key');
     case 2:
 	die('Access denied');
+    case 3:
+	die('Query limit exceeded');
 }
 
 //readObject($client, 'rd-switchboard', "rda/".$_GET["graph"]);
